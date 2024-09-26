@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'global/images/logo.svg' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'global/styles/login/style.css' %}"
+    />
+  </head>
+  <body>
+    <div class="main-body-container">
+      <div class="sub-body-container">
+        <div class="card-container">
+          <div class="left-side">
+            <img
+              src="{% static 'global/images/authentication/register-person.svg' %}"
+              alt=""
+            />
+          </div>
+          <div class="right-side">
+            <div class="register-form">
+              <h3>Sign Up</h3>
+              <form action="">
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/first-name.svg' %}"
+                    alt=""
+                  />
+                  <input type="text" placeholder="Enter First Name" />
+                </div>
+
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/last-name.svg' %}"
+                    alt=""
+                  />
+                  <input type="text" placeholder="Enter Last Name" />
+                </div>
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/username.svg' %}"
+                    alt=""
+                  />
+                  <input type="text" placeholder="Enter Username" />
+                </div>
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/email.svg' %}"
+                    alt=""
+                  />
+                  <input type="email" placeholder="Enter Email" />
+                </div>
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/pass-new.svg' %}"
+                    alt=""
+                  />
+                  <input type="password" placeholder="Enter Password" />
+                </div>
+                <div class="input-group">
+                  <img
+                    src="{% static 'global/images/icons/pass-con.svg' %}"
+                    alt=""
+                  />
+                  <input type="password" placeholder="Conform Password" />
+                </div>
+                <div class="input-terms">
+                  <input type="checkbox" name="" id="term" />
+                  <label for="term">I agree to all terms</label>
+                </div>
+                <div class="form-button">
+                  <button type="submit">Register</button>
+                </div>
+                <div class="input-terms">
+                  <p for="">
+                    Already have an account?
+                    <a href="{% url "userLogin" %}" style="text-decoration: none"
+                      ><span style="color: #008bd9">Sign In</span></a
+                    >
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
