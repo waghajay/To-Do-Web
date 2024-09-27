@@ -38,9 +38,18 @@
               <form action="" method="post">
                 {% csrf_token %}
 
+                {% if messages %}
+                <div class="input-group" style="display: flex;justify-content: center;align-items:center;background-color:#ff9090;border:none">
+                        <div class="alert alert-info">
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
 
                 {% if messages %}
-                <div class="input-group" style="display: flex;justify-content: center;align-items:center;background-color:#ff6767;border:none">
+                <div class="input-group" style="display: flex;justify-content: center;align-items:center;background-color:#ff9090;border:none">
                         <div class="alert alert-info">
                         {% for message in messages %}
                         {{ message }}

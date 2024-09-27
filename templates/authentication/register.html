@@ -28,13 +28,24 @@
           <div class="right-side">
             <div class="register-form">
               <h3>Sign Up</h3>
-              <form action="">
+              <form action="" method="post">
+                {% csrf_token %}
+                {% if messages %}
+                <div class="input-group" style="display: flex;justify-content: center;align-items:center;background-color:#ff9090;border:none">
+                        <div class="alert alert-info">
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
                 <div class="input-group">
                   <img
                     src="{% static 'global/images/icons/first-name.svg' %}"
                     alt=""
                   />
-                  <input type="text" placeholder="Enter First Name" />
+                  <label for="first_name"></label>
+                  <input type="text" name="first_name" id="first_name" placeholder="Enter First Name" autofocus required />
                 </div>
 
                 <div class="input-group">
@@ -42,38 +53,35 @@
                     src="{% static 'global/images/icons/last-name.svg' %}"
                     alt=""
                   />
-                  <input type="text" placeholder="Enter Last Name" />
-                </div>
-                <div class="input-group">
-                  <img
-                    src="{% static 'global/images/icons/username.svg' %}"
-                    alt=""
-                  />
-                  <input type="text" placeholder="Enter Username" />
+                  <label for="last_name"></label>
+                  <input type="text" name="last_name" id="last_name" placeholder="Enter Last Name" required/>
                 </div>
                 <div class="input-group">
                   <img
                     src="{% static 'global/images/icons/email.svg' %}"
                     alt=""
                   />
-                  <input type="email" placeholder="Enter Email" />
+                  <label for="email"></label>
+                  <input type="email" name="email" id="email"  placeholder="Enter Email" required/>
                 </div>
                 <div class="input-group">
                   <img
                     src="{% static 'global/images/icons/pass-new.svg' %}"
                     alt=""
                   />
-                  <input type="password" placeholder="Enter Password" />
+                  <label for="new_pass"></label>
+                  <input type="password" name="new_pass" id="new_pass" placeholder="Enter Password" required/>
                 </div>
                 <div class="input-group">
                   <img
                     src="{% static 'global/images/icons/pass-con.svg' %}"
                     alt=""
                   />
-                  <input type="password" placeholder="Conform Password" />
+                  <label for="conf_pass"></label>
+                  <input type="password" name="conf_pass" id="conf_pass" placeholder="Conform Password" required/>
                 </div>
                 <div class="input-terms">
-                  <input type="checkbox" name="" id="term" />
+                  <input type="checkbox" name="" id="term" required/>
                   <label for="term">I agree to all terms</label>
                 </div>
                 <div class="form-button">
